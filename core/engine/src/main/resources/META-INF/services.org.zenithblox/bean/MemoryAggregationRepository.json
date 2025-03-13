@@ -1,0 +1,16 @@
+{
+  "bean": {
+    "kind": "bean",
+    "name": "MemoryAggregationRepository",
+    "javaType": "org.zenithblox.processor.aggregate.MemoryAggregationRepository",
+    "interfaceType": "org.zenithblox.spi.AggregationRepository",
+    "title": "Memory Aggregation Repository",
+    "description": "A memory based AggregationRepository which stores Exchange in memory only.",
+    "deprecated": false,
+    "groupId": "org.zenithblox",
+    "artifactId": "engine",
+    "version": "1.0.0-SNAPSHOT",
+    "properties": { "optimisticLocking": { "index": 0, "kind": "property", "displayName": "Optimistic Locking", "required": false, "type": "boolean", "javaType": "boolean", "deprecated": false, "autowired": false, "secret": false, "description": "Whether to use optimistic locking" } }
+  }
+}
+

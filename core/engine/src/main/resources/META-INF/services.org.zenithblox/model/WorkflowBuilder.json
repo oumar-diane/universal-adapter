@@ -1,0 +1,18 @@
+{
+  "model": {
+    "kind": "model",
+    "name": "workflowBuilder",
+    "title": "Route Builder",
+    "description": "To refer to a Java org.zenithblox.builder.RouteBuilder instance to use.",
+    "deprecated": false,
+    "label": "configuration",
+    "javaType": "org.zenithblox.model.RouteBuilderDefinition",
+    "abstract": false,
+    "input": false,
+    "output": false
+  },
+  "properties": {
+    "id": { "index": 0, "kind": "attribute", "displayName": "Id", "group": "common", "required": false, "type": "string", "javaType": "java.lang.String", "deprecated": false, "autowired": false, "secret": false, "description": "The id of this node" },
+    "ref": { "index": 1, "kind": "attribute", "displayName": "Ref", "group": "common", "required": true, "type": "string", "javaType": "java.lang.String", "deprecated": false, "autowired": false, "secret": false, "description": "Reference to the workflow builder instance" }
+  }
+}

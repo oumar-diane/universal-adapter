@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="container" />
+        <module name="util" />
+        <module name="engine" />
+        <module name="zwangine-log-component" />
+        <module name="zwangine-file" />
+        <module name="zwangine-timer-component" />
+        <module name="zwangine-scheduler" />
+        <module name="zwangine-file-watch" />
+        <module name="api" />
+        <module name="zwangine-pgevent" />
+        <module name="zwangine-yaml-dsl" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="all-module" target="1.5" />
+      <module name="baseImpl" target="23" />
+      <module name="bean-component" target="23" />
+      <module name="health" target="23" />
+      <module name="json-util" target="23" />
+      <module name="log-component" target="23" />
+      <module name="management" target="23" />
+      <module name="management-api" target="23" />
+      <module name="model" target="23" />
+      <module name="processors" target="23" />
+      <module name="processors-reifier" target="23" />
+      <module name="support" target="23" />
+      <module name="test" target="23" />
+      <module name="timer-component" target="1.5" />
+      <module name="zwangine-core" target="1.5" />
+      <module name="zwangine-repository" target="23" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="all-module" options="" />
+      <module name="api" options="-parameters" />
+      <module name="baseImpl" options="-parameters" />
+      <module name="bean-component" options="-parameters" />
+      <module name="container" options="-parameters" />
+      <module name="core" options="" />
+      <module name="core-component" options="" />
+      <module name="engine" options="-parameters" />
+      <module name="health" options="-parameters" />
+      <module name="json-util" options="-parameters" />
+      <module name="log-component" options="-parameters" />
+      <module name="management" options="-parameters" />
+      <module name="management-api" options="-parameters" />
+      <module name="model" options="-parameters" />
+      <module name="processors" options="-parameters" />
+      <module name="processors-reifier" options="-parameters" />
+      <module name="support" options="-parameters" />
+      <module name="test" options="-parameters" />
+      <module name="timer-component" options="" />
+      <module name="util" options="-parameters" />
+      <module name="zwangine-components" options="" />
+      <module name="zwangine-core" options="" />
+      <module name="zwangine-file" options="-parameters" />
+      <module name="zwangine-file-watch" options="-parameters" />
+      <module name="zwangine-log-component" options="-parameters" />
+      <module name="zwangine-pgevent" options="-parameters" />
+      <module name="zwangine-repository" options="-parameters" />
+      <module name="zwangine-scheduler" options="-parameters" />
+      <module name="zwangine-timer-component" options="-parameters" />
+      <module name="zwangine-yaml-dsl" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,13 @@
+- from:
+    uri: "pgevent://localhost:5432/zenithbloxdb/new_event?user=postgres&pass=teste"
+    steps:
+      - choice:
+          when:
+            - simple: "${body} contains 'important'"
+              steps:
+                - log: "IMPORTANTE : ${body}"
+                - to: "file://C:/projects/test_directory_snapshots?fileName=important-log.txt&fileExist=Append"
+          otherwise:
+            steps:
+              - log: "🔹 INFO : ${body}"
+              - to: "file://C:/projects/test_directory_snapshots?fileName=info-log.txt&fileExist=Append"

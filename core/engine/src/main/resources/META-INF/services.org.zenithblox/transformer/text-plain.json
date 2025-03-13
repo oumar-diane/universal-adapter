@@ -1,0 +1,12 @@
+{
+  "transformer": {
+    "kind": "transformer",
+    "name": "text-plain",
+    "title": "Text Plain",
+    "deprecated": false,
+    "javaType": "org.zenithblox.processor.transformer.StringDataTypeTransformer",
+    "groupId": "org.zenithblox",
+    "artifactId": "engine",
+    "version": "1.0.0-SNAPSHOT"
+  }
+}

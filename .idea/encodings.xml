@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/container/core-component/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/container/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/container/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-component/bean-component/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-component/log-component/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-component/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-component/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-component/timer-component/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-component/timer-component/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-component/zwangine-file-watch/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-component/zwangine-file/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-component/zwangine-log-component/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-component/zwangine-pgevent/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-component/zwangine-scheduler/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core-component/zwangine-timer-component/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/all-module/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/all-module/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/baseImpl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/baseImpl/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/engine/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/engine/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/health/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/json-util/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/management-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/management-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/management/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/management/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/processors-reifier/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/processors/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/processors/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/support/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/support/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/util/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/util/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/zwangine-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/zwangine-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/zwangine-repository/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/core/zwangine-yaml-dsl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zwangine-components/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zwangine-components/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

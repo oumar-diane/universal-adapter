@@ -1,0 +1,15 @@
+{
+  "bean": {
+    "kind": "bean",
+    "name": "DurationWorkflowPolicy",
+    "javaType": "org.zenithblox.impl.engine.DurationWorkflowPolicy",
+    "interfaceType": "org.zenithblox.spi.WorkflowPolicy",
+    "title": "Duration Workflow Policy",
+    "description": "WorkflowPolicy which executes for a duration and then triggers an action. This can be used to stop the workflow after it has processed a number of messages, or has been running for N seconds.",
+    "deprecated": false,
+    "groupId": "org.zenithblox",
+    "artifactId": "engine",
+    "version": "1.0.0-SNAPSHOT",
+    "properties": { "maxSeconds": { "index": 0, "kind": "property", "displayName": "Max Seconds", "required": false, "type": "integer", "javaType": "int", "deprecated": false, "autowired": false, "secret": false, "description": "Maximum seconds Zwangine is running before the action is triggered" }, "maxMessages": { "index": 1, "kind": "property", "displayName": "Max Messages", "required": false, "type": "integer", "javaType": "int", "deprecated": false, "autowired": false, "secret": false, "description": "Maximum number of messages to process before the action is triggered" }, "action": { "index": 2, "kind": "property", "displayName": "Action", "required": false, "type": "object", "javaType": "org.zenithblox.impl.engine.DurationWorkflowPolicy$Action", "enum": [ "STOP_ZWANGINE_CONTEXT", "STOP_WORKFLOW", "SUSPEND_WORKFLOW", "SUSPEND_ALL_WORKFLOWS" ], "deprecated": false, "autowired": false, "secret": false, "defaultValue": "STOP_WORKFLOW", "description": "Action to perform" } }
+  }
+}
