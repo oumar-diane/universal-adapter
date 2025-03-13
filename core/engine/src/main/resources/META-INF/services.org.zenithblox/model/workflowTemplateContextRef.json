@@ -1,0 +1,17 @@
+{
+  "model": {
+    "kind": "model",
+    "name": "workflowTemplateContextRef",
+    "title": "Workflow Template Context Ref",
+    "description": "To refer to an XML file with workflow templates defined using the xml-dsl",
+    "deprecated": false,
+    "label": "configuration",
+    "javaType": "org.zenithblox.model.WorkflowTemplateContextRefDefinition",
+    "abstract": false,
+    "input": false,
+    "output": false
+  },
+  "properties": {
+    "ref": { "index": 0, "kind": "attribute", "displayName": "Ref", "group": "common", "required": true, "type": "string", "javaType": "java.lang.String", "deprecated": false, "autowired": false, "secret": false, "description": "Reference to the workflow templates in the xml dsl" }
+  }
+}

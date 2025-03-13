@@ -1,0 +1,15 @@
+- from:
+    uri: "file://C:/projects/test_directory_snapshots?fileName=database.txt&noop=true"
+    steps:
+      - choice:
+          when:
+            - simple: "${body} != null"
+              steps:
+                - split:
+                    tokenize: "\n"
+                    steps:
+                      - log: "Ligne: ${body}"
+                      - to: "file://C:/projects/test_directory_snapshots?fileName=new_database.txt&fileExist=Append"
+          otherwise:
+            steps:
+              - log: "Aucun contenu à écrire"

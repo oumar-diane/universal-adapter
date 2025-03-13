@@ -1,0 +1,8 @@
+- from:
+    uri: "file-watch://C:\\projects\\test_directory?events=MODIFY&recursive=false"
+    steps:
+      - log: "File event: ${header.ZwangineFileEventType} occurred on file ${header.ZwangineFileName} at ${header.ZwangineFileLastModified}"
+      - setHeader:
+          name: Exchange.FILE_NAME
+          simple: "${header.ZwangineFileName}.${header.ZwangineFileLastModified}"
+      - to: "file://C:\\projects\\test_directory_snapshots"

@@ -1,0 +1,14 @@
+{
+  "bean": {
+    "kind": "bean",
+    "name": "GroupedMessageAggregationStrategy",
+    "javaType": "org.zenithblox.processor.aggregate.GroupedMessageAggregationStrategy",
+    "interfaceType": "org.zenithblox.AggregationStrategy",
+    "title": "Grouped Message Aggregation Strategy",
+    "description": "Aggregate all Message into a single combined Exchange holding all the aggregated messages in a List of Message as the message body. This aggregation strategy can be used in combination with Splitter to batch messages.",
+    "deprecated": false,
+    "groupId": "org.zenithblox",
+    "artifactId": "engine",
+    "version": "1.0.0-SNAPSHOT"
+  }
+}

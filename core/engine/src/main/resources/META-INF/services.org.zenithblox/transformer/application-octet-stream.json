@@ -1,0 +1,12 @@
+{
+  "transformer": {
+    "kind": "transformer",
+    "name": "application-octet-stream",
+    "title": "Application Octet Stream",
+    "deprecated": false,
+    "javaType": "org.zenithblox.processor.transformer.ByteArrayDataTypeTransformer",
+    "groupId": "org.zenithblox",
+    "artifactId": "engine",
+    "version": "1.0.0-SNAPSHOT"
+  }
+}
