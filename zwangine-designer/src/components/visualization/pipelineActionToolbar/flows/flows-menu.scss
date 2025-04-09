@@ -1,0 +1,11 @@
+.flows-menu {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 300px;
+
+  .flows-menu-display {
+    margin: 0 8px;
+    text-align: left;
+  }
+}

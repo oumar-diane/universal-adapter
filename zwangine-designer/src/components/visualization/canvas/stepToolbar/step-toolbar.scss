@@ -1,0 +1,22 @@
+
+@use '../../Custom/custom';
+
+.step-toolbar {
+  @include custom.highligth {
+    display: inline-block;
+    position: relative;
+    border: 1px solid var(--custom-node-BorderColor);
+    border-radius: var(--custom-node-BorderRadius);
+    box-shadow: var(--custom-node-Shadow);
+    background-color: var(--custom-node-BackgroundColor);
+    padding: var(--pf-t--global--spacer--sm);
+
+    &__button {
+      margin-right: 1rem;
+    }
+
+    &__button:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

@@ -24,7 +24,9 @@ import org.zenithblox.spi.ManagementInterceptStrategy.InstrumentationProcessor;
 import org.zenithblox.support.*;
 import org.zenithblox.support.processor.DelegateAsyncProcessor;
 import org.zenithblox.support.service.ServiceHelper;
+import org.zenithblox.util.KeyValuePair;
 import org.zenithblox.util.StopWatch;
+import org.zenithblox.util.URISupport;
 import org.zenithblox.util.json.JsonObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -965,6 +967,7 @@ public class ZwangineInternalProcessor extends DelegateAsyncProcessor implements
         private final NamedNode processorDefinition;
         private final NamedWorkflow workflowDefinition;
         private final Synchronization tracingAfterWorkflow;
+        private final ZwangineContext zwangineContext;
         private final boolean skip;
 
         public TracingAdvice(ZwangineContext zwangineContext, Tracer tracer, NamedNode processorDefinition,
@@ -972,6 +975,7 @@ public class ZwangineInternalProcessor extends DelegateAsyncProcessor implements
             this.tracer = tracer;
             this.processorDefinition = processorDefinition;
             this.workflowDefinition = workflowDefinition;
+            this.zwangineContext = zwangineContext;
             this.tracingAfterWorkflow
                     = workflowDefinition != null
                             ? new TracingAfterWorkflow(tracer, workflowDefinition.getWorkflowId(), workflowDefinition) : null;
@@ -1019,10 +1023,14 @@ public class ZwangineInternalProcessor extends DelegateAsyncProcessor implements
                     // add before workflow and after workflow tracing but only once per workflow, so check if there is already an existing
                     boolean contains = exchange.getUnitOfWork().containsSynchronization(tracingAfterWorkflow);
                     if (!contains) {
+                        // propagate exchange into the container
+                        zwangineContext.onExchange(new KeyValuePair<>("from[" + URISupport.sanitizeUri(workflowDefinition.getEndpointUrl() + "]"), exchange));
                         tracer.traceBeforeWorkflow(workflowDefinition, exchange);
                         exchange.getExchangeExtension().addOnCompletion(tracingAfterWorkflow);
                     }
                 }
+                // propagate exchange into the container
+                zwangineContext.onExchange(new KeyValuePair<>(processorDefinition.getLabel(), exchange));
                 tracer.traceBeforeNode(processorDefinition, exchange);
                 return new StopWatch();
             }

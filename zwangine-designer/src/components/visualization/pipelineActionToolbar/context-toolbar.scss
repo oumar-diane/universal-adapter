@@ -1,0 +1,35 @@
+.current-dsl-tag {
+  align-self: center;
+  border: 0;
+  border-bottom: 1px solid var(--pf-v6-global--BorderColor--200);
+
+  &::before {
+    border: 1px solid var(--pf-v6-global--BorderColor--300);
+    border-bottom: 0;
+    content: ' ';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    box-sizing: border-box;
+  }
+
+  & > span {
+    margin: var(--pf-t--global--spacer--form-element) var(--pf-t--global--spacer--sm)
+    var(--pf-t--global--spacer--form-element) var(--pf-t--global--spacer--sm);
+    line-height: 22px;
+  }
+}
+
+
+.pf-v6-c-toolbar {
+  --pf-v6-c-toolbar--PaddingTop: 0;
+  --pf-v6-c-toolbar__content--PaddingLeft: 0;
+  --pf-v6-c-toolbar__content--PaddingRight: 0;
+  --pf-v6-c-toolbar--RowGap: 0;
+  padding-block-end: 0;
+}
+
+// Override for the default patternfly class
+.pf-v6-u-m-sm {
+  margin: var(--pf-t--global--spacer--sm);
+}

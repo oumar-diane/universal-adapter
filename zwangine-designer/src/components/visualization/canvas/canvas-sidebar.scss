@@ -1,0 +1,10 @@
+#topology-resize-panel {
+  --pf-v6-c-drawer__panel--PaddingBlockStart: 0;
+  --pf-v6-c-drawer__panel--PaddingBlockEnd: 0;
+}
+
+.canvas-sidebar {
+  width: calc(100% - 10px);
+  position: absolute;
+  height: 100%;
+}

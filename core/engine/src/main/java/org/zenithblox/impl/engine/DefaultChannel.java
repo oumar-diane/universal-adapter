@@ -122,7 +122,6 @@ public class DefaultChannel extends ZwangineInternalProcessor implements Channel
     @Override
     protected void doShutdown() throws Exception {
         // do not call super as we want to be in control here of the lifecycle
-
         ServiceHelper.stopAndShutdownServices(output, errorHandler);
     }
 

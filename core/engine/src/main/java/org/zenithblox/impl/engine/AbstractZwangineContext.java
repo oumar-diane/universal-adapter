@@ -135,6 +135,9 @@ public abstract class AbstractZwangineContext extends BaseService
     private SSLContextParameters sslContextParameters;
     private StartupSummaryLevel startupSummaryLevel = StartupSummaryLevel.Default;
 
+    // the callback to be called when exchange are made
+    ExchangeCallbackHolder callback;
+
     /**
      * Creates the {@link ZwangineContext} using {@link org.zenithblox.support.DefaultRegistry} as registry.
      * <p/>
@@ -1291,6 +1294,11 @@ public abstract class AbstractZwangineContext extends BaseService
         } else {
             startupListeners.add(listener);
         }
+    }
+
+    @Override
+    public void supplyCallback(ExchangeCallbackHolder callback) {
+        this.callback = callback;
     }
 
     private static String toResourcePath(Package clazz, String languageName) {

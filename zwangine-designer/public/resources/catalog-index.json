@@ -1,0 +1,47 @@
+{
+  "name" : "Zwangine",
+  "catalogs" : {
+    "components" : {
+      "name" : "components",
+      "description" : "catalog for components",
+      "file" : "component-catalog.json"
+    },
+    "dataformats" : {
+      "name" : "dataformats",
+      "description" : "catalog for dataformats",
+      "file" : "dataformats-catalog.json"
+    },
+    "entities" : {
+      "name" : "entities",
+      "description" : "catalog for entities",
+      "file" : "entity-catalog.json"
+    },
+    "languages" : {
+      "name" : "languages",
+      "description" : "catalog for languages",
+      "file" : "language-catalog.json"
+    },
+    "loadbalancers" : {
+      "name" : "loadbalancers",
+      "description" : "catalog for loadbalancers",
+      "file" : "loadbalancers-catalog.json"
+    },
+    "models" : {
+      "name" : "models",
+      "description" : "catalog for models",
+      "file" : "models-catalog.json"
+    },
+    "patterns" : {
+      "name" : "patterns",
+      "description" : "catalog for patterns",
+      "file" : "patterns-catalog.json"
+    }
+  },
+  "schemas" : {
+    "YamlDsl" : {
+      "name" : "YamlDsl",
+      "description" : "Universal Adapter YAML DSL JSON schema",
+      "file" : "yaml-dsl.json"
+    }
+  }
+}

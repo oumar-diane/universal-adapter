@@ -1,0 +1,14 @@
+table.flows-list-table {
+  & thead tr {
+    vertical-align: middle;
+  }
+
+  /* This is to make the last two columns (Edit and Delete) to be the same width */
+
+  /* Select the last two td elements from each tr */
+  & tr td:last-child,
+  & tr td:nth-last-child(2) {
+    width: 1%;
+    white-space: nowrap;
+  }
+}

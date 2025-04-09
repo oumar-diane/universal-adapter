@@ -1,0 +1,5 @@
+.catalog-list {
+  overflow-y: auto;
+  max-height: calc(100vh - 260px);;
+  padding: var(--pf-t--global--spacer--sm);
+}

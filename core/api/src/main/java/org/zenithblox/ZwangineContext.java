@@ -19,6 +19,7 @@ package org.zenithblox;
 import org.zenithblox.clock.EventClock;
 import org.zenithblox.spi.*;
 import org.zenithblox.support.jsse.SSLContextParameters;
+import org.zenithblox.util.KeyValuePair;
 import org.zenithblox.vault.VaultConfiguration;
 
 import java.time.Duration;
@@ -1145,6 +1146,24 @@ public interface ZwangineContext extends ZwangineContextLifecycle, RuntimeConfig
     MessageHistoryFactory getMessageHistoryFactory();
 
     /**
+     *
+     * Sets a custom {@link org.zenithblox.spi.MessageHistoryFactory}
+     *
+     * @param exchange the exchange made in the container by a particular node
+     */
+    void onExchange(KeyValuePair<String , Exchange> exchange);
+
+    /**
+     *
+     * Sets a custom {@link org.zenithblox.spi.MessageHistoryFactory}
+     *
+     * @param callback the callback to call when an exchange are made
+     */
+    void supplyCallback(ExchangeCallbackHolder callback);
+
+
+    /**
+     *
      * Sets a custom {@link org.zenithblox.spi.MessageHistoryFactory}
      *
      * @param messageHistoryFactory the custom factory

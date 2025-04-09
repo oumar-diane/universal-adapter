@@ -29,6 +29,7 @@ import org.zenithblox.support.ResolverHelper;
 import org.zenithblox.support.startup.DefaultStartupConditionStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.zenithblox.util.KeyValuePair;
 
 import java.util.Map;
 import java.util.Optional;
@@ -201,6 +202,14 @@ public class SimpleZwangineContext extends AbstractZwangineContext {
     @Override
     protected PeriodTaskScheduler createPeriodTaskScheduler() {
         return new DefaultPeriodTaskScheduler();
+    }
+
+
+    @Override
+    public void onExchange(KeyValuePair<String , Exchange> exchange) {
+        if(callback != null) {
+            callback.supplyExchange(exchange);
+        }
     }
 
     @Override

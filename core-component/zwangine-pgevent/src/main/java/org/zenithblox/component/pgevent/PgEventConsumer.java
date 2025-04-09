@@ -64,6 +64,7 @@ public class PgEventConsumer extends DefaultConsumer implements PGNotificationLi
         msg.setHeader(PgEventConstants.HEADER_CHANNEL, channel);
         msg.setBody(payload);
 
+
         try {
             getProcessor().process(exchange);
         } catch (Exception e) {

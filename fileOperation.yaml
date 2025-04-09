@@ -1,15 +1,11 @@
+- id: workflow-3130
 - from:
-    uri: "file://C:/projects/test_directory_snapshots?fileName=database.txt&noop=true"
+    id: from-3658
+    uri: timer
+    parameters:
+      period: "1000"
+      timerName: template
     steps:
-      - choice:
-          when:
-            - simple: "${body} != null"
-              steps:
-                - split:
-                    tokenize: "\n"
-                    steps:
-                      - log: "Ligne: ${body}"
-                      - to: "file://C:/projects/test_directory_snapshots?fileName=new_database.txt&fileExist=Append"
-          otherwise:
-            steps:
-              - log: "Aucun contenu à écrire"
+      - log:
+          id: log-9377
+          message: ${body}

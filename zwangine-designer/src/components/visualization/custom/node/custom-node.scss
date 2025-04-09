@@ -1,0 +1,72 @@
+@use '../custom';
+
+.custom-node {
+  @include custom.highligth {
+    &__container {
+      @include custom.container;
+
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-around;
+
+      &__dropTarget {
+        @include custom.drop-target;
+      }
+
+      &__image {
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        border: 1px solid var(--custom-node-BorderColor);
+        border-radius: var(--custom-node-BorderRadius);
+        background-color: var(--custom-node-BackgroundColor);
+        align-self: center;
+        padding: var(--pf-t--global--spacer--sm);
+        height: 60px;
+        width: 60px;
+
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+      }
+
+      &:hover &__image,
+      [data-toolbar-open='true'] & &__image,
+      [data-selected='true'] & &__image {
+        border-color: var(--custom-node-BorderColor-hover);
+        box-shadow: var(--custom-node-Shadow);
+      }
+
+      [data-selected='true'] & &__image {
+        @include custom.selected;
+      }
+
+      [data-disabled='true'] & {
+        @include custom.disabled;
+      }
+    }
+
+    &__label {
+      @include custom.label {
+        background-color: var(--custom-node-BackgroundColor);
+        padding: 0 calc(var(--pf-t--global--spacer--xs) * 0.75);
+        border-radius: calc(var(--custom-node-BorderRadius) * 0.4);
+
+        &__error {
+          color: var(--custom-node-BorderColor);
+
+          & > span:first-of-type {
+            margin-right: var(--pf-t--global--spacer--xs);
+          }
+        }
+      }
+    }
+  }
+
+  &__toolbar {
+    overflow: visible;
+    text-align: center;
+  }
+}

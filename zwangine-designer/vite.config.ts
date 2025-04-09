@@ -10,4 +10,18 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  // @ts-ignore
+  test: {
+    globals: true,
+    environment: 'jsdom', // if you're testing browser stuff
+    css: true,             // 👈 allows handling CSS/SCSS in tests
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        api: 'modern-compiler',
+      },
+    },
+  },
+
 })

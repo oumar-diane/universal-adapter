@@ -1,0 +1,65 @@
+import { UaSchemaDefinition } from '@/core';
+import { extractGroup } from './get-tagged-field-from-string.ts';
+import { getValue } from './get-value.ts';
+import { isDefined } from './is-defined.ts';
+
+export const getFieldGroups = (fields?: { [name: string]: unknown }) => {
+    if (!isDefined(fields)) return { common: [], groups: {} };
+
+    const propertiesArray = Object.entries(fields).reduce(
+        (acc, [name, definition]) => {
+            const group: string = getValue(definition, 'group', '');
+            if (group === '' || group === 'common' || group === 'producer' || group === 'consumer') {
+                acc.common.push(name);
+            } else {
+                acc.groups[group] ??= [];
+                acc.groups[group].push(name);
+            }
+            return acc;
+        },
+        { common: [], groups: {} } as { common: string[]; groups: Record<string, string[]> },
+    );
+
+    return propertiesArray;
+};
+
+interface FieldGroups {
+    common: Record<string, UaSchemaDefinition['schema']>;
+    groups: [string, Record<string, UaSchemaDefinition['schema']>][];
+}
+
+export const getFieldGroupsV2 = (properties?: UaSchemaDefinition['schema']['properties']): FieldGroups => {
+    if (!isDefined(properties)) return { common: {}, groups: [] };
+
+    const groupedProperties = Object.entries(properties).reduce(
+        (acc, [name, definition]) => {
+            // "$comment": "group:advanced" or "$comment": "group:consumer (advanced)"
+            const group = extractGroup('group', definition.$comment);
+
+            if (group === '' || group === 'common' || group === 'producer' || group === 'consumer') {
+                acc.common[name] = definition;
+            } else {
+                acc.groups[group] ??= {};
+                acc.groups[group][name] = definition;
+            }
+
+            return acc;
+        },
+        { common: {}, groups: {} } as {
+            common: Record<string, UaSchemaDefinition['schema']>;
+            groups: Record<string, Record<string, UaSchemaDefinition['schema']>>;
+        },
+    );
+
+    /** Prioritize advanced properties */
+    const groupArray = Object.entries(groupedProperties.groups).sort((a, b) => {
+        if (a[0] === 'advanced') {
+            return 1;
+        } else if (b[0] === 'advanced') {
+            return -1;
+        }
+        return 0;
+    });
+
+    return { common: groupedProperties.common, groups: groupArray };
+};

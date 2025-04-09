@@ -19,7 +19,7 @@ package org.zenithblox.spi;
 import java.util.Optional;
 
 /**
- * Finder to find factories from the resource classpath, usually <b>META-INF/services/org/zentihblox/zwangine/</b>.
+ * Finder to find factories from the resource classpath, usually <b>META-INF/services.org.zentihblox</b>.
  */
 public interface FactoryFinder {
 

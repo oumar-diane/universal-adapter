@@ -1,0 +1,46 @@
+import {IInteractionAddonType, NodeInteractionAddonContext} from '@/components/registers';
+import {ACTION_ID_CANCEL, ActionConfirmationModalContext, EntitiesContext} from '@/providers';
+import { useCallback, useContext, useMemo } from 'react';
+import {findModalCustomizationRecursively, processNodeInteractionAddonRecursively} from "@/components/visualization";
+import {IVisualizationNode} from "@/core/model/entity/base-visual-entity.ts";
+
+export const useDeleteGroup = (vizNode: IVisualizationNode) => {
+    const entitiesContext = useContext(EntitiesContext);
+    const deleteModalContext = useContext(ActionConfirmationModalContext);
+    const flowId = vizNode?.getId();
+
+    const { getRegisteredInteractionAddons } = useContext(NodeInteractionAddonContext);
+
+    const onDeleteGroup = useCallback(async () => {
+        const modalCustoms = findModalCustomizationRecursively(vizNode, (vn) =>
+            getRegisteredInteractionAddons(IInteractionAddonType.ON_DELETE, vn),
+        );
+        const additionalModalText = modalCustoms.length > 0 ? modalCustoms[0].additionalText : undefined;
+        const buttonOptions = modalCustoms.length > 0 ? modalCustoms[0].buttonOptions : undefined;
+        /** Open delete confirm modal, get the confirmation  */
+        const modalAnswer = await deleteModalContext?.actionConfirmation({
+            title: "Do you want to delete the '" + vizNode.getId() + "' " + vizNode.getNodeTitle() + '?',
+            text: 'All steps will be lost.',
+            additionalModalText,
+            buttonOptions,
+        });
+
+        if (!modalAnswer || modalAnswer === ACTION_ID_CANCEL) return;
+
+        processNodeInteractionAddonRecursively(vizNode, modalAnswer, (vn) =>
+            getRegisteredInteractionAddons(IInteractionAddonType.ON_DELETE, vn),
+        );
+
+        entitiesContext?.resource.removeEntity(flowId);
+        entitiesContext?.updateEntitiesFromResource();
+    }, [deleteModalContext, entitiesContext, flowId, getRegisteredInteractionAddons, vizNode]);
+
+    const value = useMemo(
+        () => ({
+            onDeleteGroup,
+        }),
+        [onDeleteGroup],
+    );
+
+    return value;
+};
