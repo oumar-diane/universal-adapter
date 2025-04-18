@@ -1,0 +1,52 @@
+{
+    "signedW3CDocument": {
+        "@context": [
+            "https://www.w3.org/2018/credentials/v1",
+            "https://w3id.org/security/bbs/v1",
+            "https://trustvc.io/context/transferable-records-context.json",
+            "https://trustvc.io/context/render-method-context.json",
+            "https://trustvc.io/context/attachments-context.json",
+            "https://schemata.openattestation.com/io/tradetrust/bill-of-lading/1.0/bill-of-lading-context.json"
+        ],
+        "type": [
+            "VerifiableCredential"
+        ],
+        "credentialStatus": {
+            "type": "TransferableRecords",
+            "tokenNetwork": {
+                "chain": "ETH",
+                "chainId": "11155111"
+            },
+            "tokenRegistry": "0xf00443AE3FC9176937d079d3A9928bf49ebc66C9",
+            "tokenId": "7ef2f55f1cc16ce7e1ec3070325a780bed6f511e518c5e7eebb44b0b5aee3aa9"
+        },
+        "renderMethod": [
+            {
+                "id": "https://generic-templates.tradetrust.io",
+                "type": "EMBEDDED_RENDERER",
+                "templateName": "BILL_OF_LADING"
+            }
+        ],
+        "credentialSubject": {
+            "shipper": {
+                "address": {}
+            },
+            "consignee": {},
+            "notifyParty": {},
+            "blNumber": "20250107",
+            "scac": "20250107"
+        },
+        "issuanceDate": "2025-04-14T11:56:18.966Z",
+        "expirationDate": "2025-07-14T11:56:18.966Z",
+        "issuer": "did:web:zenithblox.network",
+        "id": "urn:bnid:_:01963428-4e98-7ff4-99bc-c649fd2d8aa9",
+        "proof": {
+            "type": "BbsBlsSignature2020",
+            "created": "2025-04-14T11:56:19Z",
+            "proofPurpose": "assertionMethod",
+            "proofValue": "q5KBzqSrOhouoXEKn60p797Tm3Sz0MUcJ/94Ee43wqk7hiJOEfaR3fHwLzIEg2ntBZv2+0Ch0WCIYewp/jE2bGDy4XALHFGj8hM5lW5hB4kio0Kglkol4OlKw+eZ8ujstHAB9XhFu7/XwAcKOB02TQ==",
+            "verificationMethod": "did:web:zenithblox.network#keys-1"
+        }
+    },
+    "txHash": "0x6c7ee7650f878927ac3fb97c807b0a17f6786b17f836c297c2830e3b1adccd42"
+}

@@ -44,12 +44,11 @@ import java.util.Map;
  * out-of-the-box a large number of useful processors, it also allows you to create your own. The rule Zwangine uses is to
  * take the out {@link Message} produced by the previous {@link Processor} and set it as the in for the next
  * {@link Processor}. If the previous {@link Processor} did not produce an out, then the in of the previous
- * {@link Processor} is sent as the next in. At the end of the processing chain, depending on the {@link ExchangePattern
- * Message Exchange Pattern} (or MEP) the last out (or in of no out available) is sent by the {@link Consumer} back to
+     * {@link Processor} is sent as the next in. At the end of the processing chain, depending on the {@link ExchangePattern
+ * Message Exchange Pattern} (or MEP) the last out (or in if no out available) is sent by the {@link Consumer} back to
  * the original caller.
  * <p/>
- * Zwangine, in addition to providing out-of-the-box a large number of useful processors, it also allows you to implement
- * and use your own. When the Exchange is passed to a {@link Processor}, it always contains an in {@link Message} and no
+ * When the Exchange is passed to a {@link Processor}, it always contains an in {@link Message} and no
  * out {@link Message}. The {@link Processor} <b>may</b> produce an out, depending on the nature of the
  * {@link Processor}. The in {@link Message} can be accessed using the {@link #getIn()} method. Since the out message is
  * null when entering the {@link Processor}, the {@link #getOut()} method is actually a convenient factory method that

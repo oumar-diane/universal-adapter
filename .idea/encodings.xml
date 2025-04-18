@@ -44,6 +44,7 @@
     <file url="file://$PROJECT_DIR$/core/zwangine-core/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core/zwangine-repository/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/core/zwangine-yaml-dsl/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/poc/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/test/src/main/java" charset="UTF-8" />

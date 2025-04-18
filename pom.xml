@@ -27,6 +27,7 @@
         <module>zwangine-components</module>
         <module>core-component</module>
         <module>core-component/zwangine-file-watch</module>
+        <module>poc</module>
     </modules>
     <scm>
         <connection/>
